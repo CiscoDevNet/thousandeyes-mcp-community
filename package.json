@@ -1,0 +1,9 @@
+{
+  "name": "thousandeyes-mcp",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Model Context Protocol server for Cisco ThousandEyes v7",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": { "node": ">=18" }
+}
