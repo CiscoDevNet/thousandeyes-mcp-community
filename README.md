@@ -13,3 +13,12 @@ Community project **not affiliated** with official Cisco/ThousandEyes.
   - `te.list_tests`
   - `te.list_agents`
 - Minimal TypeScript server using MCP stdio transport.
+
+## Tech Outline
+- Language: TypeScript (Node ≥ 18)
+
+---
+
+**License:** Apache-2.0
+
+**Maintainers:** Aditya Chellam, Kiran Kabdal
