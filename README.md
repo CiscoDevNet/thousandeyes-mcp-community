@@ -15,7 +15,7 @@ Community project **not affiliated** with official Cisco/ThousandEyes.
 - Minimal TypeScript server using MCP stdio transport.
 
 ## Tech Outline
-- Language: TypeScript (Node ≥ 18)
+- Language: Python3
 
 ---
 
