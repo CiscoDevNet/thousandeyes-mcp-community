@@ -1,15 +1,65 @@
+# src/server.py
 from mcp.server.fastmcp import FastMCP
-from clients.te_client import list_tests
+from clients.te_client import list_tests, get_test_results, get_path_vis, list_dashboards, get_dashboard, get_dashboard_widget
 
 mcp = FastMCP("thousandeyes")
 
 @mcp.tool()
-async def te_list_tests(name_contains: str | None = None):
-    tests = await list_tests()
+async def te_list_tests(aid: str | None = None,
+                        name_contains: str | None = None,
+                        test_type: str | None = None):
+    tests = await list_tests(aid)
+    if test_type:
+        tt = str(test_type).lower()
+        tests = [t for t in tests if str(t.get("type","")).lower() == tt]
     if name_contains:
-        n = name_contains.lower()
+        n = str(name_contains).lower()
         tests = [t for t in tests if n in str(t.get("testName", t.get("name",""))).lower()]
     return tests
+
+@mcp.tool()
+async def te_get_test_results(test_id: str,
+                              test_type: str,
+                              window: str | None = None,
+                              start: str | None = None,
+                              end: str | None = None,
+                              aid: str | None = None,
+                              agent_id: str | None = None):
+    return await get_test_results(test_id, test_type, window, start, end, aid, agent_id)
+
+@mcp.tool()
+async def te_get_path_vis(test_id: str,
+                          window: str | None = None,
+                          start: str | None = None,
+                          end: str | None = None,
+                          aid: str | None = None,
+                          agent_id: str | None = None,
+                          direction: str | None = None):
+    return await get_path_vis(test_id, window, start, end, aid, agent_id, direction)
+
+@mcp.tool()
+async def te_list_dashboards(aid: str | None = None,
+                             title_contains: str | None = None):
+    dashboards = await list_dashboards(aid)
+    if title_contains:
+        n = str(title_contains).lower()
+        dashboards = [d for d in dashboards if n in str(d.get("title","")).lower()]
+    return dashboards
+
+
+@mcp.tool()
+async def te_get_dashboard(dashboard_id: str, aid: str | None = None):
+    return await get_dashboard(dashboard_id, aid)
+
+@mcp.tool()
+async def te_get_dashboard_widget(dashboard_id: str,
+                                  widget_id: str,
+                                  start: str | None = None,
+                                  end: str | None = None,
+                                  aid: str | None = None,
+                                  window: str | None = None):
+    return await get_dashboard_widget(dashboard_id, widget_id, start, end, aid, window)
+
 
 if __name__ == "__main__":
     mcp.run()
