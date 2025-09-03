@@ -32,16 +32,16 @@ reserve breaking changes until the next major version release.
 
 ## Other Ways to Contribute
 
-We welcome anyone that wants to contribute to `<project name>` to triage and reply to open issues to help troubleshoot
+We welcome anyone that wants to contribute to `thousandeyes-mcp-community` to triage and reply to open issues to help troubleshoot
 and fix existing bugs. Here is what you can do:
 
 - Help ensure that existing issues follows the recommendations from the _[Reporting Issues](#reporting-issues)_ section,
   providing feedback to the issue's author on what might be missing.
 - Review and update the existing content of our [Wiki](https://github.com/org_name/repo_name/wiki) with up-to-date
   instructions and code samples.
-- Review existing pull requests, and testing patches against real existing applications that use `<project name>`.
+- Review existing pull requests, and testing patches against real existing applications that use `thousandeyes-mcp-community`.
 - Write a test, or add a missing test case to an existing test.
 
-Thanks again for your interest on contributing to `<project name>`!
+Thanks again for your interest on contributing to `thousandeyes-mcp-community`!
 
 :heart:
