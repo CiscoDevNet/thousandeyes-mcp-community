@@ -11,6 +11,11 @@ dist/
 build/
 coverage/
 
+# Python caches (added)
+__pycache__/
+pycache/
+*.pyc
+
 # Env & secrets
 .env
 .env.*
