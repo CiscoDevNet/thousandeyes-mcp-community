@@ -72,6 +72,16 @@ Token is read **only** from env, never written to disk.
 
 ## Try it out!
 
+### Example 1: In-depth Analysis of Customer Journeys for Optimizing Performance
+
+https://github.com/user-attachments/assets/5915fb97-20ef-42af-ad53-f6889a839330
+
+### Example 2: Visualizing Performance Data
+
+https://github.com/user-attachments/assets/c5ef796a-42fc-422f-82c0-9f8c4c68aeb8
+
+### Here are some other prompts to try out
+
 - What was the network health of the Patient Portal between 13:00–14:00 CET on 1 Sep 2025?
 - Which regions/agents showed elevated page-load time for the Patient Portal between 08:00–10:00 UTC today?”
 - Show uptime and TTFB for the Patient Portal homepage over the last 24 hours, and call out any drops.
@@ -79,6 +89,7 @@ Token is read **only** from env, never written to disk.
 - Open the Patient Portal dashboard and list the widgets relevant to availability and the login flow and callout any widgets reporting no data
 - For test <ID>, compare network latency during 10:00–10:30 UTC vs. the prior 30 minutes.”
 - Show path visualization anomalies for test <ID> around 15:30 UTC yesterday.”
+
 
 ---
 
