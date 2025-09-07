@@ -107,11 +107,11 @@ async def get_dashboard_widget(dashboard_id, widget_id, start=None, end=None, ai
         r = await c.get(f"/dashboards/{dashboard_id}/widgets/{widget_id}", params=params)
         r.raise_for_status()
         return r.json()
-    
+
+# Account Management    
 async def get_account_groups():
     if not TOKEN:
         raise RuntimeError("TE_TOKEN is not set")
-
     async with httpx.AsyncClient(
         base_url=BASE,
         headers=HDRS,
@@ -122,3 +122,17 @@ async def get_account_groups():
         r = await c.get("/account-groups")
         r.raise_for_status()
         return r.json().get("accountGroups", [])
+
+async def get_users():
+    if not TOKEN:
+        raise RuntimeError("TE_TOKEN is not set")
+    async with httpx.AsyncClient(
+        base_url=BASE,
+        headers=HDRS,
+        timeout=TIMEOUT,
+        http2=False,
+        trust_env=True
+    ) as c:
+        r = await c.get("/users")
+        r.raise_for_status()
+        return r.json().get("users", [])
