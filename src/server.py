@@ -16,7 +16,9 @@
 
 # src/server.py
 from mcp.server.fastmcp import FastMCP
-from clients.te_client import list_tests, get_test_results, get_path_vis, list_dashboards, get_dashboard, get_dashboard_widget
+from clients.te_client import list_tests, get_test_results, get_path_vis
+from clients.te_client import list_dashboards, get_dashboard, get_dashboard_widget 
+from clients.te_client import get_account_groups
 
 mcp = FastMCP("thousandeyes")
 
@@ -76,6 +78,9 @@ async def te_get_dashboard_widget(dashboard_id: str,
                                   window: str | None = None):
     return await get_dashboard_widget(dashboard_id, widget_id, start, end, aid, window)
 
+@mcp.tool()
+async def te_get_account_groups():
+    return await get_account_groups()
 
 if __name__ == "__main__":
     mcp.run()
