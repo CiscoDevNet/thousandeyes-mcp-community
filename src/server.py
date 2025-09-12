@@ -94,8 +94,6 @@ async def te_get_users():
 
 
 #Agents and Related Data 
-from clients.te_client_read import list_agents_filtered
-
 @mcp.tool()
 async def te_list_agents(expand: list[str] | None = None, agentTypes: list[str] | None = None, labels: list[str] | None = None):
     return await list_agents_filtered(expand, agentTypes, labels)
