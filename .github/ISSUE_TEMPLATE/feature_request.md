@@ -1,20 +1,23 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: ''
+about: Suggest a new capability or improvement
+title: "[FR]"
 labels: ''
-assignees: ''
+assignees: AdityaChellam
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+### Summary
+A clear and concise description of the feature you’d like.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+### Why is this Needed?
+Explain why this feature would be useful. What problem does it solve?
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+### Proposed Solution
+How would you like it to work? (Examples, API references, pseudo-code)
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+### Alternatives Considered
+List any alternative solutions you’ve thought about.
+
+### Additional Context
+Add any other context, screenshots, or references here.
