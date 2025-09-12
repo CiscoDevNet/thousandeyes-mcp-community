@@ -1,38 +1,33 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Report something that isn’t working as expected
 title: ''
 labels: ''
-assignees: ''
+assignees: AdityaChellam
 
 ---
 
-**Describe the bug**
+### Description
 A clear and concise description of what the bug is.
 
-**To Reproduce**
-Steps to reproduce the behavior:
+### Steps to Reproduce
 1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+2. Run '...'
+3. See error '...'
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+### Expected Behavior
+What you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+### Actual Behavior
+What actually happened.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+### Screenshots / Logs
+If applicable, add screenshots or logs to help explain your problem.
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+### Environment
+- OS: [e.g. Ubuntu 22.04, macOS 14]
+- Python version: [e.g. 3.12]
+- MCP client: [e.g. Claude Desktop, OpenAI MCP]
 
-**Additional context**
-Add any other context about the problem here.
+### Additional Context
+Any other information that might be helpful.
