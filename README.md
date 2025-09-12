@@ -23,12 +23,14 @@ Model Context Protocol (MCP) server for **Cisco ThousandEyes v7** — lets AI as
 | Tool | What it does | Endpoint(s) |
 |---|---|---|
 | `te_list_tests(aid?, name_contains?, test_type?)` | Lists tests (filter by name/type/AG) | `GET /v7/tests` |
-| `te_list_agents(agent_types?, aid?)` | Lists enterprise / cloud / endpoint agents | `GET /v7/agents` |
+| `te_list_agents(agent_types?, aid?)` | Lists enterprise / enterprise-cluster / cloud agents | `GET /v7/agents` |
 | `te_get_test_results(test_id, test_type, window?/start?/end?/aid?/agent_id?)` | Test results (e.g., `network`, `page-load`, `web-transactions`; not `dns-server`) | `GET /v7/test-results/{testId}/{testType}` |
 | `te_get_path_vis(test_id, window?/start?/end?/aid?/agent_id?/direction?)` | Path visualization data | `GET /v7/test-results/{testId}/path-vis` |
 | `te_list_dashboards(aid?, title_contains?)` | Lists dashboards | `GET /v7/dashboards` |
 | `te_get_dashboard(dashboard_id, aid?)` | Dashboard details incl. widget list | `GET /v7/dashboards/{dashboardId}` |
 | `te_get_dashboard_widget(dashboard_id, widget_id, window?/start?/end?/aid?)` | Widget data for a dashboard | `GET /v7/dashboards/{dashboardId}/widgets/{widgetId}` |
+| `te_get_users()` | Lists users in the ThousandEyes account | `GET /v7/users` |
+| `te_get_account_groups()` | Lists account groups available to the authenticated org | `GET /v7/account-groups` |
 
 
 ---
