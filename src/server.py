@@ -16,12 +16,15 @@
 
 # src/server.py
 from mcp.server.fastmcp import FastMCP
-from clients.te_client import list_tests, get_test_results, get_path_vis
-from clients.te_client import list_dashboards, get_dashboard, get_dashboard_widget 
-from clients.te_client import get_account_groups, get_users
+
+from clients.te_client_read import list_tests, get_test_results, get_path_vis
+from clients.te_client_read import list_dashboards, get_dashboard, get_dashboard_widget 
+from clients.te_client_read import get_account_groups, get_users
+from clients.te_client_read import list_agents_filtered
 
 mcp = FastMCP("thousandeyes")
 
+#Cloud and Enterprise agent tests and related data
 @mcp.tool()
 async def te_list_tests(aid: str | None = None,
                         name_contains: str | None = None,
@@ -55,6 +58,8 @@ async def te_get_path_vis(test_id: str,
                           direction: str | None = None):
     return await get_path_vis(test_id, window, start, end, aid, agent_id, direction)
 
+
+#Dashboards, Widgets and Related Data
 @mcp.tool()
 async def te_list_dashboards(aid: str | None = None,
                              title_contains: str | None = None):
@@ -63,7 +68,6 @@ async def te_list_dashboards(aid: str | None = None,
         n = str(title_contains).lower()
         dashboards = [d for d in dashboards if n in str(d.get("title","")).lower()]
     return dashboards
-
 
 @mcp.tool()
 async def te_get_dashboard(dashboard_id: str, aid: str | None = None):
@@ -78,6 +82,8 @@ async def te_get_dashboard_widget(dashboard_id: str,
                                   window: str | None = None):
     return await get_dashboard_widget(dashboard_id, widget_id, start, end, aid, window)
 
+
+#Account Management
 @mcp.tool()
 async def te_get_account_groups():
     return await get_account_groups()
@@ -85,6 +91,15 @@ async def te_get_account_groups():
 @mcp.tool()
 async def te_get_users():
     return await get_users()
+
+
+#Agents and Related Data 
+from clients.te_client_read import list_agents_filtered
+
+@mcp.tool()
+async def te_list_agents(expand: list[str] | None = None, agentTypes: list[str] | None = None, labels: list[str] | None = None):
+    return await list_agents_filtered(expand, agentTypes, labels)
+
 
 if __name__ == "__main__":
     mcp.run()

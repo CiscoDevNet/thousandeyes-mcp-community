@@ -136,3 +136,36 @@ async def get_users():
         r = await c.get("/users")
         r.raise_for_status()
         return r.json().get("users", [])
+    
+#Agents and Related Data
+async def list_agents_filtered(expand: list[str] | None = None, agentTypes: list[str] | None = None, labels: list[str] | None = None):
+    if not TOKEN:
+        raise RuntimeError("TE_TOKEN is not set")
+    headers = {
+        "Authorization": f"Bearer {TOKEN}",
+        "Accept": "application/hal+json"
+    }
+    params = {}
+    # Default to enterprise + enterprise-cluster unless overridden
+    if agentTypes is None:
+        params["agentTypes"] = ["enterprise", "enterprise-cluster"]
+    else:
+        params["agentTypes"] = agentTypes
+    if expand:
+        params["expand"] = expand
+    if labels:
+        params["labels"] = labels
+    async with httpx.AsyncClient(base_url=BASE, headers=headers, timeout=TIMEOUT) as c:
+        r = await c.get("/agents", params=params)
+        r.raise_for_status()
+        data = r.json().get("agents", [])
+        return [
+            {
+                "agentState": a.get("agentState"),
+                "agentId": a.get("agentId"),
+                "agentName": a.get("agentName"),
+                "agentType": a.get("agentType"),
+                "location": a.get("location")
+            }
+            for a in data
+        ]
