@@ -1,9 +1,11 @@
-# thousandeyes-mcp
-
-Model Context Protocol (MCP) server for **Cisco ThousandEyes v7** — lets AI assistants query **tests, agents, alerts, dashboards, widgets, and test results** (network, page-load, web-transactions, path-vis).
+# Thousandeyes MCP server community 
 
 > Community project - **NOT affiliated** with Cisco/ThousandEyes.  
 > **Status:** Alpha (MVP) read-only.
+
+**Official Cisco ThousandEyes MCP server: [https://docs.thousandeyes.com/product-documentation/integration-guides/thousandeyes-mcp-server](https://docs.thousandeyes.com/product-documentation/integration-guides/thousandeyes-mcp-server)**
+
+Model Context Protocol (MCP) server for **Cisco ThousandEyes v7** — lets AI assistants query **tests, agents, alerts, dashboards, widgets, and test results** (network, page-load, web-transactions, path-vis).
 
 ---
 
