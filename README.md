@@ -1,3 +1,7 @@
+# DEPRECATION NOTICE
+This MCP server has been deprecated and will no longer be updated. The official ThousandEyes MCP server docs here: [https://docs.thousandeyes.com/product-documentation/integration-guides/thousandeyes-mcp-server
+](https://docs.thousandeyes.com/product-documentation/integration-guides/thousandeyes-mcp-server)
+
 # Thousandeyes MCP server community 
 
 > Community project - **NOT affiliated** with Cisco/ThousandEyes.  
